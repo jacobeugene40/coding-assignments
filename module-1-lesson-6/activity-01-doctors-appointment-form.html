@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Doctor's Appointment Form</title>
+</head>
+<body>
+
+    <h1>My Doctor's Appointment Form</h1>
+    <p>Welcome! Please fill out the form below to book your appointment.</p>
+    <hr>
+
+    <form>
+
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name"><br><br>
+
+            <label for="patient-id">Patient ID:</label>
+            <input type="password" id="patient-id" name="patient-id" placeholder="Enter your patient ID"><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Your Visit</legend>
+
+            <label for="doctor">Choose a Doctor:</label>
+            <select id="doctor" name="doctor">
+                <option value="dr-smith">Dr. Smith — General Practice</option>
+                <option value="dr-patel">Dr. Patel — Pediatrics</option>
+                <option value="dr-lee">Dr. Lee — Dentistry</option>
+            </select>
+
+            <br><br>
+
+            <p>Reason for Visit:</p>
+            <input type="radio" id="reason-fever" name="reason" value="fever">
+            <label for="reason-fever">Fever</label><br>
+
+            <input type="radio" id="reason-cold" name="reason" value="cold">
+            <label for="reason-cold">Cold</label><br>
+
+            <input type="radio" id="reason-checkup" name="reason" value="checkup">
+            <label for="reason-checkup">Checkup</label><br>
+
+            <input type="radio" id="reason-tooth" name="reason" value="tooth-pain">
+            <label for="reason-tooth">Tooth Pain</label>
+
+            <br><br>
+
+            <label for="notes">Notes to the Doctor:</label><br>
+            <textarea id="notes" name="notes" rows="3" placeholder="Describe your symptoms or any concerns..."></textarea>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Preferred Visit Day</legend>
+
+            <input type="checkbox" id="day-monday" name="preferred-day" value="monday">
+            <label for="day-monday">Monday</label><br>
+
+            <input type="checkbox" id="day-wednesday" name="preferred-day" value="wednesday">
+            <label for="day-wednesday">Wednesday</label><br>
+
+            <input type="checkbox" id="day-friday" name="preferred-day" value="friday">
+            <label for="day-friday">Friday</label>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Book My Appointment">
+
+    </form>
+
+</body>
+</html>
