@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fdf6ec;
+    color: #333333;
+}
+
+/* Fixed positioning: stays in place at the top of the viewport even while scrolling */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkorange;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 100;
+}
+
+/* Push page content down so it doesn't sit under the fixed bar */
+.page-content {
+    margin-top: 60px;
+    padding: 20px 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Relative positioning: shifted right from where it would normally sit */
+.pet-of-month {
+    position: relative;
+    left: 40px;
+    color: #d2691e;
+    font-weight: bold;
+}
+
+.card {
+    position: relative; /* Needed so the absolutely positioned badge is placed relative to this card */
+    background-color: #fff3e0;
+    border: 2px solid darkorange;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+/* Absolute positioning: pinned to the top-right corner of the card */
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: forestgreen;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+/* Sticky positioning: scrolls normally, then sticks to the top once it reaches it */
+.section-label {
+    position: sticky;
+    top: 60px;
+    background-color: #fdf6ec;
+    padding: 10px 0;
+    border-bottom: 2px solid darkorange;
+    color: #d2691e;
+}
