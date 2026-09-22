@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    /* Dark gradient sky fading from dark blue to navy */
+    background: linear-gradient(to bottom, #0a1a3f, #000033);
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.banner {
+    /* Banner fading from purple to coral */
+    background: linear-gradient(to right, #6a0dad, #ff7f50);
+    padding: 30px 20px;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.fact-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Small glowing circle that twinkles between yellow and white */
+.star {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin: 40px auto;
+    box-shadow: 0 0 15px 5px yellow;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        background-color: yellow;
+        box-shadow: 0 0 15px 5px yellow;
+    }
+    to {
+        background-color: white;
+        box-shadow: 0 0 25px 10px white;
+    }
+}
