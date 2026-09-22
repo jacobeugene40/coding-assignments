@@ -1,0 +1,65 @@
+body {
+    background-color: #0a1a3f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Giant yellow title with an orange shadow */
+h1 {
+    font-size: 4em;
+    color: yellow;
+    text-shadow: 3px 3px 6px orange;
+    margin-bottom: 5px;
+}
+
+/* Tagline transformed to Title Case */
+.tagline {
+    font-style: italic;
+    text-transform: capitalize;
+    color: #cccccc;
+    margin-top: 0;
+}
+
+/* Section headings in UPPERCASE with underlines */
+h2 {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Bold green powers */
+.powers {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Crossed-out weaknesses */
+.weaknesses {
+    text-decoration: line-through;
+    color: #ff6b6b;
+}
+
+/* Tilted gold badge */
+.badge {
+    display: inline-block;
+    background-color: gold;
+    color: #0a1a3f;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    margin: 20px 0;
+}
