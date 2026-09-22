@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background-color: #fffaf0;
+    color: #333333;
+}
+
+h1 {
+    color: #d2691e;
+}
+
+/* Warm orange intro paragraph */
+.intro {
+    color: #e07a1f;
+    font-size: 1.1em;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.menu-list li {
+    background-color: #fff3e0;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+
+/* Third item highlighted as the Chef's Special using nth-child */
+.menu-list li:nth-child(3) {
+    background-color: #ffd54f;
+    font-weight: bold;
+    position: relative;
+}
+
+.menu-list li:nth-child(3)::after {
+    content: " — Chef's Special";
+    color: #b45309;
+    font-style: italic;
+}
+
+/* Description paragraph with a big first letter using first-letter pseudo-element */
+.description {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.description::first-letter {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #d2691e;
+    float: left;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons button {
+    font-size: 1em;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #d2691e;
+    transition: box-shadow 0.3s ease;
+}
+
+.reserve-btn {
+    background-color: #8b5e3c;
+}
+
+/* Buttons glow on hover */
+.order-btn:hover {
+    box-shadow: 0 0 15px 5px #ffb347;
+}
+
+.reserve-btn:hover {
+    box-shadow: 0 0 15px 5px #c8a165;
+}
