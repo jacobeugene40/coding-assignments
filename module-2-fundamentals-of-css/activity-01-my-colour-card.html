@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Colour Card</title>
+
+    <!-- Method 1: Internal CSS — written inside a style tag in the head -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .tagline {
+            text-align: center;
+            color: #555555;
+            font-style: italic;
+        }
+
+        /* Method 4: Class selector — reused on every detail line in the About Me card */
+        .detail-line {
+            margin: 6px 0;
+            font-size: 16px;
+        }
+    </style>
+
+    <!-- Method 3: External CSS — linked from a separate stylesheet file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Method 2: Inline CSS — written directly on the element -->
+    <h1 style="color: #2b7a78; text-align: center;">My Colour Card</h1>
+
+    <p class="tagline">A little card all about me and the things I love.</p>
+
+    <!-- Method 5: ID selector — styled uniquely in style.css since only one element uses this id -->
+    <div id="about-card">
+        <h2>About Me</h2>
+        <p class="detail-line"><strong>Name:</strong> Jacob Chidi Eugene</p>
+        <p class="detail-line"><strong>Favourite Colour:</strong> Teal</p>
+        <p class="detail-line"><strong>Hobby:</strong> Coding new projects</p>
+        <p class="detail-line"><strong>Motto:</strong> Learn something new every day</p>
+    </div>
+
+    <div class="favourites">
+        <h2>Favourite Things</h2>
+        <ul>
+            <li>Favourite Food: Jollof Rice</li>
+            <li>Favourite Movie: Interstellar</li>
+            <li>Favourite Season: Rainy Season</li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* Method 3: External CSS — kept in its own file and linked from index.html */
+
+#about-card {
+    background-color: #ffffff;
+    border: 2px solid #2b7a78;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favourites {
+    background-color: #def2f1;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.favourites h2 {
+    color: #17252a;
+}
+
+.favourites ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
