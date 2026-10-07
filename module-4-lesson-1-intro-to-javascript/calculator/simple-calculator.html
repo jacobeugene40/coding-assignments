@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1>Adding Machine</h1>
+
+  <input id="num1" type="number">
+  +
+  <input id="num2" type="number">
+  <button onclick="add()">Add!</button>
+
+  <h2 id="answer"></h2>
+
+  <script>
+    function add() {
+      var a = Number(document.getElementById("num1").value);
+      var b = Number(document.getElementById("num2").value);
+      document.getElementById("answer").textContent = a + b;
+    }
+  </script>
+
+</body>
+
+</html>

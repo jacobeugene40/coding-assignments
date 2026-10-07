@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adding Machine</title>
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #fff4d6; --card: #ffffff; --ink: #2b2350; --a: #ff6b6b; --b: #3ab0ff; --ok: #2fbf71;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #1d1a33; --card: #2b2750; --ink: #fff4d6; }
+  }
+  :root[data-theme="dark"] { --bg: #1d1a33; --card: #2b2750; --ink: #fff4d6; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Baloo 2", "Comic Sans MS", "Trebuchet MS", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .machine {
+    background: var(--card); border-radius: 28px; padding: 28px;
+    width: min(92vw, 420px); text-align: center;
+    box-shadow: 0 8px 0 var(--ink);
+  }
+  h1 { margin: 0 0 18px; font-size: 1.8rem; }
+  .row { display: flex; align-items: center; justify-content: center; gap: 10px; }
+  input {
+    width: 100px; font: inherit; font-size: 2rem; text-align: center;
+    border: 4px solid var(--ink); border-radius: 16px; padding: 8px;
+    background: var(--bg); color: var(--ink);
+  }
+  #num1 { border-color: var(--a); }
+  #num2 { border-color: var(--b); }
+  .sign { font-size: 2.4rem; font-weight: 700; }
+  button {
+    margin-top: 20px; font: inherit; font-size: 1.4rem; font-weight: 700;
+    background: var(--ok); color: #fff; border: 0; border-radius: 16px;
+    padding: 12px 28px; cursor: pointer; box-shadow: 0 5px 0 #1d8a50;
+  }
+  button:active { transform: translateY(4px); box-shadow: 0 1px 0 #1d8a50; }
+  button:focus-visible, input:focus-visible { outline: 4px solid var(--ink); outline-offset: 3px; }
+  #result { margin-top: 22px; font-size: 2.4rem; font-weight: 700; min-height: 3rem; }
+</style>
+</head>
+<body>
+  <main class="machine">
+    <h1>Adding Machine</h1>
+    <div class="row">
+      <input id="num1" type="number" value="2" aria-label="First number">
+      <span class="sign">+</span>
+      <input id="num2" type="number" value="3" aria-label="Second number">
+    </div>
+    <button id="addBtn">Add!</button>
+    <div id="result" aria-live="polite">Press Add!</div>
+  </main>
+
+<script>
+  // STEP 1: find our boxes and the button on the page
+  const box1 = document.getElementById("num1");
+  const box2 = document.getElementById("num2");
+  const button = document.getElementById("addBtn");
+  const result = document.getElementById("result");
+
+  // STEP 2: a recipe (function) that adds the two numbers
+  function addNumbers() {
+    const a = Number(box1.value);
+    const b = Number(box2.value);
+
+    // STEP 3: if a box is empty, ask for a number
+    if (box1.value === "" || box2.value === "") {
+      result.textContent = "Type two numbers!";
+      return;
+    }
+
+    // STEP 4: add and show the answer
+    result.textContent = a + " + " + b + " = " + (a + b);
+  }
+
+  // STEP 5: run the recipe when the button is clicked (and Enter is pressed)
+  button.addEventListener("click", addNumbers);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") addNumbers();
+  });
+</script>
+</body>
+</html>

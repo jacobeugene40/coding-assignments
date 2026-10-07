@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Animal Safari</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item {
+            height: 300px;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        .slide-forest { background-color: #2e7d32; }
+        .slide-ocean { background-color: #0277bd; }
+        .slide-desert { background-color: #c47b2a; }
+
+        section {
+            padding: 60px 20px;
+            min-height: 60vh;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#safari-navbar" data-bs-offset="80" tabindex="0">
+
+    <!-- Carousel cycling through three habitat slides -->
+    <div id="habitatCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="slide-forest w-100 h-100 d-flex align-items-center justify-content-center">Forest Habitat</div>
+            </div>
+            <div class="carousel-item">
+                <div class="slide-ocean w-100 h-100 d-flex align-items-center justify-content-center">Ocean Habitat</div>
+            </div>
+            <div class="carousel-item">
+                <div class="slide-desert w-100 h-100 d-flex align-items-center justify-content-center">Desert Habitat</div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#habitatCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#habitatCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Scrollspy navbar, highlights the active section while scrolling -->
+    <nav id="safari-navbar" class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link" href="#forest">Forest</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ocean">Ocean</a></li>
+                <li class="nav-item"><a class="nav-link" href="#desert">Desert</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="forest" class="bg-light">
+        <div class="container">
+            <h2>Forest</h2>
+            <p>Dense forests are home to deer, foxes, owls, and countless insect species that thrive beneath the canopy. The layered structure of trees, shrubs, and ground cover supports a huge variety of life.</p>
+        </div>
+    </section>
+
+    <section id="ocean" class="bg-white">
+        <div class="container">
+            <h2>Ocean</h2>
+            <p>The ocean hosts everything from tiny plankton to massive whales. Coral reefs alone support roughly a quarter of all known marine species, making them some of the richest ecosystems on Earth.</p>
+        </div>
+    </section>
+
+    <section id="desert" class="bg-light">
+        <div class="container">
+            <h2>Desert</h2>
+            <p>Despite harsh conditions, deserts support camels, scorpions, and reptiles that have adapted to survive extreme heat and scarce water over millions of years.</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
