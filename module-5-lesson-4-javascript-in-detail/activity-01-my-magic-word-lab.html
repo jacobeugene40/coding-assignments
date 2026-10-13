@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Magic Word Lab</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body { background: lightyellow; }
+        h1, h3 { color: darkorange; }
+        .box { background: white; color: darkorange; }
+    </style>
+</head>
+<body>
+
+    <div class="container py-4">
+
+        <h1 class="mb-1">My Magic Word Lab</h1>
+        <p class="text-muted mb-4">Explore JavaScript types, conversions, string searching, and safe error handling.</p>
+
+        <!-- Card 1: What Type Is It? -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">What Type Is It?</h3>
+                <button class="btn btn-warning" onclick="checkTypes()">Reveal the Types!</button>
+                <div id="typeResult" class="box p-3 mt-3 rounded"></div>
+            </div>
+        </div>
+
+        <!-- Card 2: Switch the Type -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Switch the Type</h3>
+                <input type="text" id="numIn" class="form-control mb-2" placeholder="Type any number here (try: 42)">
+                <button class="btn btn-warning" onclick="toStr()">Turn into Text</button>
+                <button class="btn btn-warning" onclick="toNum()">Turn into Number</button>
+                <div id="convResult" class="box p-3 mt-3 rounded"></div>
+            </div>
+        </div>
+
+        <!-- Card 3: Find and Swap a Word -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Find and Swap a Word</h3>
+                <input type="text" id="findW" class="form-control mb-2" placeholder="Word to find (try: dragon)">
+                <input type="text" id="swapW" class="form-control mb-2" placeholder="Swap it with (try: wizard)">
+                <button class="btn btn-warning" onclick="doSearch()">Find It!</button>
+                <button class="btn btn-warning" onclick="doReplace()">Swap It!</button>
+                <div id="srResult" class="box p-3 mt-3 rounded">The dragon flew over the big castle.</div>
+            </div>
+        </div>
+
+        <!-- Card 4: Catch the Mistake -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Catch the Mistake</h3>
+                <input type="text" id="divIn" class="form-control mb-2" placeholder="Divide 100 by... (try: 0 or 'banana')">
+                <button class="btn btn-warning" onclick="trySafe()">Try It!</button>
+                <div id="errResult" class="box p-3 mt-3 rounded"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var sen = "The dragon flew over the big castle.";
+
+        function checkTypes() {
+            let score = 42;
+            let playerName = "Alex";
+            let gameOver = true;
+
+            document.getElementById("typeResult").innerHTML =
+                "42 is a " + typeof score + "<br>" +
+                "'Alex' is a " + typeof playerName + "<br>" +
+                "true is a " + typeof gameOver;
+        }
+
+        function toStr() {
+            let value = document.getElementById("numIn").value;
+            let text = String(value);
+            document.getElementById("convResult").innerHTML = text + " is now a " + typeof text;
+        }
+
+        function toNum() {
+            let value = document.getElementById("numIn").value;
+            let num = Number(value);
+            document.getElementById("convResult").innerHTML = num + " is now a " + typeof num;
+        }
+
+        function doSearch() {
+            let word = document.getElementById("findW").value;
+            let position = sen.search(word);
+
+            if (position === -1) {
+                document.getElementById("srResult").innerHTML = "'" + word + "' was not found in the sentence.";
+            } else {
+                document.getElementById("srResult").innerHTML = "'" + word + "' was found at position " + position + ".";
+            }
+        }
+
+        function doReplace() {
+            let word = document.getElementById("findW").value;
+            let swap = document.getElementById("swapW").value;
+            let newSentence = sen.replace(word, swap);
+
+            document.getElementById("srResult").innerHTML = newSentence;
+        }
+
+        function trySafe() {
+            let input = document.getElementById("divIn").value;
+
+            try {
+                let num = Number(input);
+
+                if (input.trim() === "" || isNaN(num)) {
+                    throw "That's not a valid number!";
+                }
+                if (num === 0) {
+                    throw "You can't divide by zero!";
+                }
+
+                let result = 100 / num;
+                document.getElementById("errResult").innerHTML = "100 / " + num + " = " + result;
+
+            } catch (error) {
+                document.getElementById("errResult").innerHTML = "Oops! " + error;
+            }
+        }
+    </script>
+
+</body>
+</html>
