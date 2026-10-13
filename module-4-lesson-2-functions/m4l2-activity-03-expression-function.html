@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expression Function</title>
+</head>
+<body>
+
+    <h1>Expression Function</h1>
+    <p>This page stores a function expression inside a variable, then calls it.</p>
+
+    <button onclick="runExpression()">Run Function Expression</button>
+
+    <p id="output"></p>
+
+    <script>
+        // Function expression — the function is stored inside the variable "multiply"
+        const multiply = function (a, b) {
+            return a * b;
+        };
+
+        function runExpression() {
+            let result = multiply(6, 7);
+            document.getElementById("output").innerHTML = "6 x 7 = " + result + " (calculated using a function expression)";
+        }
+    </script>
+
+</body>
+</html>

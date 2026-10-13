@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope of Variables in Functions</title>
+</head>
+<body>
+
+    <h1>Scope of Variables in Functions</h1>
+    <p>This page shows how a local variable only exists inside the function where it was created.</p>
+
+    <button onclick="showMessage()">Run Function</button>
+
+    <p id="output"></p>
+
+    <script>
+        function showMessage() {
+            // "message" is a local variable — it only exists inside this function
+            let message = "I am a local variable, created inside showMessage().";
+
+            document.getElementById("output").innerHTML = message;
+
+            // Trying to log "message" outside this function would cause an error,
+            // because it doesn't exist anywhere else in the code.
+        }
+
+        // Uncommenting the line below would cause an error, since "message"
+        // is local to showMessage() and cannot be accessed from out here.
+        // console.log(message);
+    </script>
+
+</body>
+</html>

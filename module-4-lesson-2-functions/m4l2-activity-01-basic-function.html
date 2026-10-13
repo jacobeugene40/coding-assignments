@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Basic Function in JS</title>
+</head>
+<body>
+
+    <h1>Create Basic Function in JS</h1>
+    <p>Click the button below to call a function.</p>
+
+    <button onclick="greetUser()">Say Hello</button>
+
+    <p id="output"></p>
+
+    <script>
+        // Function declaration
+        function greetUser() {
+            document.getElementById("output").innerHTML = "Hello! This message came from a function that was invoked on-click.";
+        }
+    </script>
+
+</body>
+</html>
