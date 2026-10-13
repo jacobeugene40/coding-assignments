@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Planet Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            display: inline-block;
+            width: 200px;
+            min-height: 100px;
+            margin: 10px;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Planet Cards</h1>
+    <p>Click the button to reveal three planets and a fun fact about each.</p>
+
+    <button onclick="showPlanets()">Show Planets!</button>
+
+    <div id="card1" class="card"></div>
+    <div id="card2" class="card"></div>
+    <div id="card3" class="card"></div>
+
+    <script>
+        class Planet {
+            constructor(name, fact) {
+                this.name = name;
+                this.fact = fact;
+            }
+
+            describe() {
+                return this.name + ": " + this.fact;
+            }
+        }
+
+        function showPlanets() {
+            let p1 = new Planet("Earth", "The only known planet with liquid water on its surface.");
+            let p2 = new Planet("Mars", "Home to the tallest volcano in the solar system, Olympus Mons.");
+            let p3 = new Planet("Saturn", "Its rings are made mostly of ice and rock, some pieces as small as dust.");
+
+            document.getElementById("card1").innerHTML = p1.describe();
+            document.getElementById("card2").innerHTML = p2.describe();
+            document.getElementById("card3").innerHTML = p3.describe();
+        }
+    </script>
+
+</body>
+</html>
