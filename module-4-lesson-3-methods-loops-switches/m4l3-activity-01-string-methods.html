@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h2>JavaScript String Methods</h2>
+    <p>Basic Methods</p>
+
+    <script>
+        let str = "AmAzInG";
+
+        document.write(str.toUpperCase());
+        document.write("<br>");
+        document.write(str.toLowerCase());
+        document.write("<br>");
+        document.write(str.startsWith('i'));
+        document.write("<br>");
+
+        // Testing a method using Regular Expression
+        let str1 = "I learnt about Methods";
+        let pattern = new RegExp("about");
+        let res = pattern.test(str1);
+
+        document.write(res);
+    </script>
+
+</body>
+</html>
