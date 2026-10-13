@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Zoo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .zone {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            line-height: 100px;
+            font-size: 1.2em;
+            background-color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="zooBody">
+
+    <h1>My Zoo</h1>
+    <p>Click the button to open the zoo and fill each zone with an animal!</p>
+
+    <div id="zone1" class="zone">Empty</div>
+    <div id="zone2" class="zone">Empty</div>
+    <div id="zone3" class="zone">Empty</div>
+
+    <p id="totalCount"></p>
+
+    <br>
+    <button onclick="openZoo()">Open the Zoo!</button>
+
+    <script>
+        function openZoo() {
+            // Task 1: fill Zone 1 with the first animal
+            document.getElementById("zone1").innerHTML = "Lion";
+
+            // Task 2: fill Zone 2 with the second animal (targeting its id)
+            document.getElementById("zone2").innerHTML = "Elephant";
+
+            // Task 3: fill Zone 3 with the third animal
+            document.getElementById("zone3").innerHTML = "Giraffe";
+
+            // Task 4: show the total animal count
+            document.getElementById("totalCount").innerHTML = "Total animals in the zoo: 3";
+
+            // Task 5: change the zoo background colour
+            document.getElementById("zooBody").style.backgroundColor = "lightgreen";
+
+            // Task 6: update the page title to show a status message
+            document.title = "My Zoo - Now Open!";
+        }
+    </script>
+
+</body>
+</html>
