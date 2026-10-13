@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Delivery Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Delivery Tracker</h1>
+    <p>Save your order as JSON, then track it through delivery.</p>
+
+    <button onclick="saveOrder()">Save Order</button>
+    <button onclick="startDelivery()">Start Delivery</button>
+
+    <div class="row"><strong>JSON Text:</strong> <span id="jsonRow"></span></div>
+    <div class="row"><strong>Parsed Back:</strong> <span id="parsedRow"></span></div>
+    <div class="row"><strong>Delivery Status:</strong> <span id="deliveryStatus">Not started yet</span></div>
+
+    <script>
+        let order = {
+            item: "Jollof Rice Special",
+            price: 12.99,
+            shop: "Mama's Kitchen"
+        };
+
+        function saveOrder() {
+            let jsonText = JSON.stringify(order);
+            let loadedOrder = JSON.parse(jsonText);
+
+            document.getElementById("jsonRow").innerHTML = jsonText;
+            document.getElementById("parsedRow").innerHTML =
+                loadedOrder.item + " — $" + loadedOrder.price + " from " + loadedOrder.shop;
+        }
+
+        // Wraps setTimeout in a Promise so it can be used with await
+        function delay(ms) {
+            return new Promise(function (resolve) {
+                setTimeout(resolve, ms);
+            });
+        }
+
+        async function startDelivery() {
+            document.getElementById("deliveryStatus").innerHTML = "Order received!";
+
+            setTimeout(function () {
+                document.getElementById("deliveryStatus").innerHTML = "Kitchen is preparing...";
+            }, 1500);
+
+            await delay(3000);
+            document.getElementById("deliveryStatus").innerHTML = "Out for delivery!";
+
+            await delay(2000);
+            document.getElementById("deliveryStatus").innerHTML = "Delivered!";
+        }
+    </script>
+
+</body>
+</html>
