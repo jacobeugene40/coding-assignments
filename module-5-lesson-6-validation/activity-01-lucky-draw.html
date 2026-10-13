@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lucky Draw</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 450px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        #timer {
+            margin-top: 30px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lucky Draw</h1>
+    <p>Enter your name, guess a number from 1 to 5, and see if you match the lucky number!</p>
+
+    <label for="nameInput">Your Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+
+    <label for="guessInput">Your Guess (1-5):</label>
+    <input type="number" id="guessInput" placeholder="Enter a number from 1 to 5" min="1" max="5">
+
+    <button onclick="checkForm()">Play!</button>
+
+    <p id="message"></p>
+
+    <p id="timer">Seconds on page: 0</p>
+
+    <script>
+        // Timer: counts up every second
+        var seconds = 0;
+        setInterval(function () {
+            seconds++;
+            document.getElementById("timer").textContent = "Seconds on page: " + seconds;
+        }, 1000);
+
+        function checkForm() {
+            var name = document.getElementById("nameInput").value;
+            var guess = document.getElementById("guessInput").value;
+            var message = document.getElementById("message");
+
+            var ok = true;
+
+            if (name.trim() === "") {
+                message.textContent = "Please enter your name!";
+                message.style.color = "red";
+                ok = false;
+            }
+
+            if (ok && guess.trim() === "") {
+                message.textContent = "Please enter a guess between 1 and 5!";
+                message.style.color = "red";
+                ok = false;
+            }
+
+            if (ok) {
+                var lucky = Math.floor(Math.random() * 5) + 1;
+
+                if (Number(guess) === lucky) {
+                    message.textContent = name + ", you guessed it! The lucky number was " + lucky + ". You win!";
+                    message.style.color = "green";
+                } else {
+                    message.textContent = name + ", not quite. The lucky number was " + lucky + ". Try again!";
+                    message.style.color = "navy";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
