@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array in JS</title>
+</head>
+<body>
+
+    <h2>Array in JS</h2>
+    <p>Arrays let you store multiple values in a single variable, and access each one using its index number (starting from 0).</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Creating an array
+        let colors = ["Red", "Green", "Blue", "Yellow"];
+
+        // Accessing array elements by index
+        let firstColor = colors[0];
+        let thirdColor = colors[2];
+
+        document.getElementById("demo").innerHTML =
+            "Full array: " + colors + "<br>" +
+            "First color (index 0): " + firstColor + "<br>" +
+            "Third color (index 2): " + thirdColor + "<br>" +
+            "Total number of items (colors.length): " + colors.length;
+    </script>
+
+</body>
+</html>

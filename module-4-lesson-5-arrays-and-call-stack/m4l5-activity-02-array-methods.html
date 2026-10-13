@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h2>JavaScript Array Methods</h2>
+    <h2>join() and pop()</h2>
+
+    <p>join() converts array elements into a single string. pop() removes the last element from an array.</p>
+
+    <p id="myjoin"></p>
+    <p id="myfirstpop"></p>
+    <p id="mysecondpop"></p>
+
+    <script>
+        let fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        document.getElementById("myjoin").innerHTML = fruits.join(" * ");
+
+        document.getElementById("myfirstpop").innerHTML = "Before pop(): " + fruits;
+
+        fruits.pop();
+
+        document.getElementById("mysecondpop").innerHTML = "After pop(): " + fruits;
+    </script>
+
+</body>
+</html>
