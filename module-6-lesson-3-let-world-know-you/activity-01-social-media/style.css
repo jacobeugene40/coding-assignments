@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* Social media section background */
+#social-media {
+  background: #2f3550;
+}
+
+/* Main heading */
+.m-heading {
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* Social media card buttons */
+.media_link {
+  border: 2px solid #f2a900;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-right: 18px;
+  background: transparent;
+  text-align: left;
+}
+
+/* Spacing between the cards row */
+.row.pt-5 {
+  gap: 18px;
+}
+
+/* Text inside each card */
+.media_link h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Icons inside each card */
+.media_link i {
+  font-size: 22px;
+}
+
+/* Email card (filled) */
+.media_link.bg-warning {
+  border: 2px solid #f2a900;
+}

@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: #2b2b2b;
+}
+
+/* About section */
+.about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Heading using Roboto Slab, matching the rest of the portfolio */
+.m-heading {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}

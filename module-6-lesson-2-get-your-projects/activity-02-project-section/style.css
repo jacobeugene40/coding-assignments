@@ -1,0 +1,36 @@
+body {
+  background: #2b2b2b;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* Main heading inside the Projects section */
+#projects h1 {
+  font-weight: 900;
+}
+
+/* Card component */
+.card {
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+/* Card image */
+.card-img-top {
+  padding: 18px;
+  height: 13rem;
+  object-fit: contain;
+}
+
+/* Card description text */
+.card-text {
+  color: #6f7780;
+  font-size: .85rem;
+}
+
+/* Warning button */
+.btn-warning {
+  font-weight: 700;
+  font-size: .8rem;
+  border-radius: 3px;
+}
