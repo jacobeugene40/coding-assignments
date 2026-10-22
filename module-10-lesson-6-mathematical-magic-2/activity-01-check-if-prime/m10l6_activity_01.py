@@ -5,7 +5,7 @@ from math import sqrt
 number = int(input("Enter your number : "))
 print("\n")
 
-# If given number is greater than 1
+# If given number is greater than 1 then we have:
 if number > 1:
 
     # check if number is divisible from 2 to number/2
