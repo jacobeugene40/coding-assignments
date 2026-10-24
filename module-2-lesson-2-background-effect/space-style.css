@@ -42,8 +42,8 @@ body {
 
 @keyframes twinkle {
     from {
-        background-color: yellow;
-        box-shadow: 0 0 15px 5px yellow;
+        background-color: rgb(177, 177, 42);
+        box-shadow: 0 0 15px 5px rgb(177, 177, 42);
     }
     to {
         background-color: white;
