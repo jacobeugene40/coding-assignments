@@ -1,0 +1,47 @@
+/* Simple styling (the lesson's own style.css comes in its zip - replace this file with it if you like) */
+body {
+    font-family: Arial, sans-serif;
+    background: #fffbe6;
+    text-align: center;
+    padding: 40px 16px;
+    color: #333;
+}
+
+h1 { color: #e67e00; }
+
+form {
+    margin: 24px auto;
+    display: inline-block;
+    background: #fff;
+    padding: 20px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+input {
+    padding: 8px;
+    margin: 0 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 9px 18px;
+    font-size: 16px;
+    background: #ffb300;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover { background: #ffa000; }
+
+.result {
+    margin: 24px auto;
+    max-width: 380px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
